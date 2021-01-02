@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Header, Icon, List } from 'semantic-ui-react';
 
 class App extends React.Component {
   state = {
@@ -19,13 +20,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <Header as='h2'>
+          <Icon name='users' />
+          <Header.Content>Reactivities</Header.Content>
+        </Header>
+        <List>
           {
             this.state.values.map((value: any, i: number) => (
-              <li key={i}>{value.name}</li>
+              <List.Item key={i}>{value.name}</List.Item>
             ))
           }
-        </ul>
+        </List>
       </div>
     )
   }
